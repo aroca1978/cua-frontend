@@ -93,7 +93,7 @@ import { LoaderComponent } from './apply/loader/loader.component';
     HttpLinkModule,
     NgbModule.forRoot(),
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyCOCRnw8NsT15mCD1esRRmL22TZAKSS1wo',
+      apiKey: '',
       libraries: ['places']
     }),
     TextMaskModule,

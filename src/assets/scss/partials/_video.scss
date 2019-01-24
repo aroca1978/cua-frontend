@@ -1,0 +1,51 @@
+#video {
+  background: url(../img/video-bg.jpg) no-repeat fixed 0 0 ;
+  background-size: cover;
+  background-position: top center;
+  position: relative;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  z-index: 1;
+  color: #fff;
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background:rgba($base-color, .65);
+  }
+}
+
+.popup-video {
+  font-size: 72px;
+  &:hover {
+    color: #fff;
+  }
+}
+.video-content {
+  > h4 {
+    font-size: 36px;
+    font-weight: 600;
+    font-family: $sf;
+    color: #fff;
+    margin-top: 20px;
+  }
+  
+  > P {
+    font-size: 20px;
+  }
+}
+
+
+
+
+@media screen and(max-width:767px){
+  .video-content{
+    > h4 {
+      font-size: 28px;
+    }
+  }
+}

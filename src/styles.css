@@ -1,0 +1,236 @@
+/* You can add global styles to this file, and also import other style files */
+
+#cdgapply {
+    font-size: 0.9em;
+    line-height: 1.2em;
+}
+
+#cdgapply p {
+    font-size: 0.9em;
+    line-height: 1.2em;
+    margin-top: 0;
+    margin-bottom: 0.1;
+}
+
+#cdgapply label {
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+#cdgapply .active {
+    background-color: darkolivegreen;
+    border-color: darkolivegreen;
+}
+
+#cdgapply .bgcdg-green {
+    background-color: darkolivegreen;
+}
+
+#cdgapply .navbar {
+    background-color: darkolivegreen;
+}
+
+#cdgapply .navbar .navbar-brand {
+    color: #cee6d2;
+}
+
+#cdgapply .navbar .navbar-brand:hover,
+#cdgapply .navbar .navbar-brand:focus {
+    color: #ffffff;
+}
+
+#cdgapply .navbar .navbar-text {
+    color: #cee6d2;
+}
+
+#cdgapply .navbar .navbar-text a {
+    color: #ffffff;
+}
+
+#cdgapply .navbar .navbar-text a:hover,
+#cdgapply .navbar .navbar-text a:focus {
+    color: #ffffff;
+}
+
+#cdgapply .navbar .navbar-nav .nav-link {
+    color: #cee6d2;
+    border-radius: .25rem;
+    margin: 0 0.25em;
+}
+
+#cdgapply .navbar .navbar-nav .nav-link:not(.disabled):hover,
+#cdgapply .navbar .navbar-nav .nav-link:not(.disabled):focus {
+    color: #ffffff;
+}
+
+#cdgapply .navbar .navbar-nav .dropdown-menu {
+    background-color: #38774c;
+    border-color: #44ad65;
+}
+
+#cdgapply .navbar .navbar-nav .dropdown-menu .dropdown-item {
+    color: #cee6d2;
+}
+
+#cdgapply .navbar .navbar-nav .dropdown-menu .dropdown-item:hover,
+#cdgapply .navbar .navbar-nav .dropdown-menu .dropdown-item:focus,
+#cdgapply .navbar .navbar-nav .dropdown-menu .dropdown-item.active {
+    color: #ffffff;
+    background-color: #44ad65;
+}
+
+#cdgapply .navbar .navbar-nav .dropdown-menu .dropdown-divider {
+    border-top-color: #44ad65;
+}
+
+#cdgapply .navbar .navbar-nav .nav-item.active .nav-link,
+#cdgapply .navbar .navbar-nav .nav-item.active .nav-link:hover,
+#cdgapply .navbar .navbar-nav .nav-item.active .nav-link:focus,
+#cdgapply .navbar .navbar-nav .nav-item.show .nav-link,
+#cdgapply .navbar .navbar-nav .nav-item.show .nav-link:hover,
+#cdgapply .navbar .navbar-nav .nav-item.show .nav-link:focus {
+    color: #ffffff;
+    background-color: #44ad65;
+}
+
+#cdgapply .navbar .navbar-toggler {
+    border-color: darkolivegreen;
+}
+
+#cdgapply .navbar .navbar-toggler:hover,
+#cdgapply .navbar .navbar-toggler:focus {
+    background-color: darkolivegreen;
+}
+
+#cdgapply .navbar .navbar-toggler .navbar-toggler-icon {
+    color: #cee6d2;
+}
+
+#cdgapply .navbar .navbar-collapse,
+#cdgapply .navbar .navbar-form {
+    border-color: #cee6d2;
+}
+
+#cdgapply .navbar .navbar-link {
+    color: #cee6d2;
+}
+
+#cdgapply .navbar .navbar-link:hover {
+    color: #ffffff;
+}
+
+@media (max-width: 575px) {
+    #cdgapply .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item {
+        color: #cee6d2;
+    }
+    #cdgapply .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+    #cdgapply .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+        color: #ffffff;
+    }
+    #cdgapply .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item.active {
+        color: #ffffff;
+        background-color: #44ad65;
+    }
+}
+
+@media (max-width: 767px) {
+    #cdgapply .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item {
+        color: #cee6d2;
+    }
+    #cdgapply .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+    #cdgapply .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+        color: #ffffff;
+    }
+    #cdgapply .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item.active {
+        color: #ffffff;
+        background-color: #44ad65;
+    }
+}
+
+@media (max-width: 991px) {
+    #cdgapply .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item {
+        color: #cee6d2;
+    }
+    #cdgapply .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+    #cdgapply .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+        color: #ffffff;
+    }
+    #cdgapply .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item.active {
+        color: #ffffff;
+        background-color: #44ad65;
+    }
+}
+
+@media (max-width: 1199px) {
+    #cdgapply .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item {
+        color: #cee6d2;
+    }
+    #cdgapply .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+    #cdgapply .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+        color: #ffffff;
+    }
+    #cdgapply .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item.active {
+        color: #ffffff;
+        background-color: #44ad65;
+    }
+}
+
+#cdgapply .navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item {
+    color: #cee6d2;
+}
+
+#cdgapply .navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+#cdgapply .navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+    color: #ffffff;
+}
+
+#cdgapply .navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item.active {
+    color: #ffffff;
+    background-color: #44ad65;
+}
+
+.btn-cuapp {
+    color: #ffffff;
+    background-color: #215715;
+    border-color: #215715;
+}
+
+.btn-cuapp:hover,
+.btn-cuapp:focus,
+.btn-cuapp:active,
+.btn-cuapp.active,
+.open .dropdown-toggle.btn-cuapp {
+    color: #ffffff;
+    background-color: #2F7A24;
+    border-color: #215715;
+}
+
+.btn-cuapp:active,
+.btn-cuapp.active,
+.open .dropdown-toggle.btn-cuapp {
+    background-image: none;
+}
+
+.btn-cuapp.disabled,
+.btn-cuapp[disabled],
+fieldset[disabled] .btn-cuapp,
+.btn-cuapp.disabled:hover,
+.btn-cuapp[disabled]:hover,
+fieldset[disabled] .btn-cuapp:hover,
+.btn-cuapp.disabled:focus,
+.btn-cuapp[disabled]:focus,
+fieldset[disabled] .btn-cuapp:focus,
+.btn-cuapp.disabled:active,
+.btn-cuapp[disabled]:active,
+fieldset[disabled] .btn-cuapp:active,
+.btn-cuapp.disabled.active,
+.btn-cuapp[disabled].active,
+fieldset[disabled] .btn-cuapp.active {
+    background-color: #215715;
+    border-color: #215715;
+}
+
+.btn-cuapp .badge {
+    color: #215715;
+    background-color: #ffffff;
+}

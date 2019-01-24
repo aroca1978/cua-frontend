@@ -1,0 +1,12 @@
+.feature-block {
+  padding-left: 15px;
+  padding-right: 15px; }
+  .feature-block > h4 {
+    margin: 20px 0;
+    font-size: 20px;
+    font-weight: 600; }
+
+@media (max-width: 575px) {
+  .feature-block {
+    padding-left: 0;
+    padding-right: 0; } }

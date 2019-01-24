@@ -1,0 +1,125 @@
+/******************\
+base element default style
+/******************/
+
+.pagesstyle {
+    color: #666666;
+    line-height: 30px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: normal;
+}
+
+.pagesstyle img {
+    max-width: 100%;
+}
+
+.pagesstyle a {
+    color: inherit;
+    font-size: inherit;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+}
+
+.pagesstyle a:hover,
+.pagesstyle a:focus,
+.pagesstyle a:active {
+    text-decoration: none;
+    color: #304A1E;
+    outline: none;
+}
+
+.pagesstyle h1,
+.pagesstyle h2,
+.pagesstyle h3,
+.pagesstyle h4,
+.pagesstyle h5,
+.pagesstyle h6 {
+    color: #000;
+    font-weight: normal;
+}
+
+.pagesstyle h1,
+.pagesstyle h2 {
+    font-size: 48px;
+}
+
+.pagesstyle h3 {
+    font-size: 38px;
+}
+
+.pagesstyle h4 {
+    font-size: 30px;
+}
+
+.pagesstyle h5 {
+    font-size: 24px;
+}
+
+.pagesstyle h6 {
+    font-size: 20px;
+}
+
+.pagesstyle section {
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+.pagesstyle input,
+.pagesstyle textarea {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #f6f6f6;
+    margin-bottom: 15px;
+    box-shadow: none;
+    border-radius: 4px;
+    color: #666;
+    font-family: inherit;
+}
+
+.pagesstyle pre,
+.pagesstyle code,
+.pagesstyle blockquote {
+    background-color: #F5F5F5;
+    border-color: #304A1E;
+    border-style: solid;
+    border-width: 0px 0px 0px 4px;
+    padding: 20px;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.pagesstyle pre,
+.pagesstyle code {
+    font-family: monospace;
+}
+
+.pagesstyle ::selection {
+    background: #304A1E;
+    color: #fff;
+}
+
+.pagesstyle ::-webkit-input-placeholder {
+    opacity: 1;
+    color: inherit;
+}
+
+.pagesstyle ::-moz-placeholder {
+    opacity: 1;
+    color: inherit;
+}
+
+.pagesstyle :-ms-input-placeholder {
+    opacity: 1;
+    color: inherit;
+}
+
+.pagesstyle :-moz-placeholder {
+    opacity: 1;
+    color: inherit;
+}
+
+.pagesstyle :focus,
+ :active {
+    outline: none;
+}

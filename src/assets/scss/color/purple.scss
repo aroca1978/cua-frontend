@@ -1,0 +1,38 @@
+$base-color:#8e71ec;
+
+a:hover, a:focus, a:active {
+  color: $base-color;
+}
+.btn-theme, .swiper-pagination-bullet-active {
+  background: $base-color;
+  &:hover, &:focus {
+     background: darken($base-color, 10%) !important;
+  }
+} 
+.plan-duration {
+  color: #fff;
+}
+
+#intro-cdglanding::after, #video::after  {
+    background: rgba($base-color, 0.6);
+}
+.scroll-top,
+.newsletter-block, 
+.plan-head,
+.newsletter .btn:hover{
+  background: $base-color;
+  color: #fff;
+}
+.promo-list > ul > li span,
+.highlight-text,
+.ratting, 
+.copyright-text i,
+.faq-title > a,
+.plan-details ul li i{
+  color: $base-color;
+}
+
+.author-img.slick-center,
+.plan.recommended{
+  border-color: $base-color;
+}

@@ -1,0 +1,32 @@
+a:hover, a:focus, a:active {
+  color: #58c9e9; }
+
+.btn-theme, .swiper-pagination-bullet-active {
+  background: #58c9e9; }
+  .btn-theme:hover, .btn-theme:focus, .swiper-pagination-bullet-active:hover, .swiper-pagination-bullet-active:focus {
+    background: #2bbae3 !important; }
+
+.plan-duration {
+  color: #fff; }
+
+#intro-cdglanding::after, #video::after {
+  background: rgba(88, 201, 233, 0.6); }
+
+.scroll-top,
+.newsletter-block,
+.plan-head,
+.newsletter .btn:hover {
+  background: #58c9e9;
+  color: #fff; }
+
+.promo-list > ul > li span,
+.highlight-text,
+.ratting,
+.copyright-text i,
+.faq-title > a,
+.plan-details ul li i {
+  color: #58c9e9; }
+
+.author-img.slick-center,
+.plan.recommended {
+  border-color: #58c9e9; }

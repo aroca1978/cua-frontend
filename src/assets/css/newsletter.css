@@ -1,0 +1,68 @@
+#newsletter {
+    padding: 0;
+}
+.newsletter-block {
+  padding: 70px;
+  margin-top: -90px;
+  background: #304A1E;
+  border-radius:2px;
+  color: #fff;
+  box-shadow: 0 0 100px 0 rgba(0,0,0,.2);
+  > h4 {
+    font-size: 24px;
+    color: #fff;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+  }
+}
+.newsletter {
+  max-width: 600px;
+  margin: 20px auto 0;
+  position: relative;
+  input {
+    border-radius: 100px;
+    height: 50px;
+    color: #666;
+    padding-left: 20px;
+  }
+  .btn {
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    height: 48px;
+    width: 100px;
+    font-size: 30px;
+    background: transparent;
+    color: #000;
+    transition: .5s;
+    &:focus, &:active {
+    outline: none;
+    }
+    &:hover {
+    background: #304A1E;
+    color: #fff;
+    }
+  }
+}
+
+@media screen and (max-width:767px){
+  .newsletter-block {
+    padding: 70px 15px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

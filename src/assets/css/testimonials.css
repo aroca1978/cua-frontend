@@ -1,0 +1,49 @@
+.author-list {
+  width: 250px;
+  margin: 0 auto;
+}
+.author-img {
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 10px;
+  border:3px solid transparent;
+  cursor: pointer;
+  transition: .5s;
+  &.slick-center {
+    border-color:#304A1E;
+    box-shadow: 0 0 15px 1px rgba(0,0,0,.15);
+    transform: scale(1.2);
+    cursor: default;
+  }
+}
+.ratting {
+  color: #304A1E;
+}
+.author-meta {
+  > h4 {
+  margin: 0;
+  font-weight: 600;
+    font-size: 16px;
+  }
+  > span {
+  color: #bbbbbb;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

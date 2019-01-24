@@ -1,0 +1,27 @@
+
+.swiper-container {
+  width: 100%;
+  padding-bottom: 30px;
+  padding-top: 50px;
+}
+.swiper-slide.swiper-slide-next {
+  box-shadow: 0 0 50px 3px rgba(0,0,0,.15);
+}
+.swiper-pagination {
+  position: relative;
+}
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  border-radius: 100%;
+  background: #ebebeb;
+  opacity: 1;
+  margin: 0 5px;
+  &.active {
+    background: #3498db;
+  }
+}
+.swiper-pagination-bullet-active {
+  background: $base-color;
+}

@@ -1,0 +1,25 @@
+<header>
+    <app-navbar></app-navbar>
+</header>
+<main id="cdgapply">
+    <div class="container">
+        <div class="row" *ngIf="isOkToRun">
+            <div class="col-1 col-md-3 cdgleft-tab-menu d-none d-sm-block">
+                <app-progress></app-progress>
+
+            </div>
+            <div class="col-12 col-sm-11 col-md-9">
+                <div class="container">
+                    <div>
+
+                        <router-outlet></router-outlet>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" *ngIf="!isOkToRun">
+            <div class="col text-danger text-center">Please login or start a new app</div>
+        </div>
+    </div>
+</main>

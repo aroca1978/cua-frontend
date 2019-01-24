@@ -1,0 +1,89 @@
+/******************\
+#intro section
+/******************/
+
+#intro-cdglanding {
+  background: url(../img/intro-banner.jpg) no-repeat scroll 0 0;
+  background-size: cover;
+  padding-top: 170px;
+  padding-bottom: 120px;
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  &::after {
+    content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba($base-color, .5);
+  z-index: -1;
+}
+}
+
+.cdglanding-title {
+  color: #fff;
+  font-family: $sf;
+  font-weight: 300;
+}
+
+.cdglanding-tagline {
+  font-size: 16px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.intro-btn {
+  > .btn{
+    margin-right: 15px;
+}
+}
+
+.slick-dots {
+  position: static;
+  margin-top: 15px;
+      > li {
+      border: 1px solid #fff;
+      background: transparent;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      button[type="button"] {
+        display: none;
+      }
+      &.slick-active {
+        border: 1px solid #fff;
+        background: #fff;
+      }
+    }
+}
+
+@media screen and (max-width:991px){
+  #intro-cdglanding {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+
+@media screen and (max-width:767px){
+  .w-50 {
+    width: 100% !important;
+  }
+  #intro-cdglanding {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
+
+
+@media screen and (max-width:480px){
+  .intro-btn {
+    .btn {
+      display: block;
+      margin: 0;
+      margin-bottom: 15px;
+    }
+  }
+}
+

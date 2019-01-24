@@ -1,0 +1,486 @@
+<form [formGroup]="cuasales" (ngSubmit)="saveSales()" ngNativeValidate>
+    <div class="row">
+        <div class="col">
+            <h3 class="mt-2">Sales</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <hr>
+            <p class="mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, aliquam vitae. Beatae, velit blanditiis nihil aliquam molestias saepe! Exercitationem id rerum quo tempore maxime ipsam maiores cum quisquam, voluptatibus sequi.</p>
+            <div class="form-row justify-content-between mt-2">
+                <div class="col-12 col-sm-4">
+                    <label class="smalllabel" for="website">Business Website</label>
+                    <input type="text" class="form-control" name="website" id="website" placeholder="www.mywebsite.com" formControlName="website">
+                </div>
+                <div class="col-12 col-sm-4 align-self-center mt-2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="true" id="nowebsite" (change)="setNowebsite($event, nowebsite)" name="nowebsite" formControlName="nowebsite" [checked]="nowebsite">
+                        <label class="form-check-label" for="nowebsite">
+  Select if no website
+</label>
+
+                    </div>
+                </div>
+                <div class="col-12 col-sm-4 mt-2">
+                    <label class="smalllabel" for="customer_service_phone">
+            Customer Service Phone Number
+          </label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text"><span class="fas fa-phone"></span>
+                            </div>
+                        </div>
+                        <input type="tel" class="form-control" placeholder="XXX-XXX-XXXX" name="customer_service_phone" id="customer_service_phone" [textMask]="{mask: mask}" formControlName="customer_service_phone">
+                    </div>
+                </div>
+
+            </div>
+            <div class="form-row justify-content-between mt-2" *ngIf="!nowebsite">
+                <div class="col-12 col-sm-6 mt-4">
+                    <label class="smalllabel" for="webHostingServer">Existing Webhost provider</label>
+                    <input type="text" class="form-control" name="webHostingServer" id="webHostingServer" placeholder="Webhost provider" formControlName="webHostingServer">
+                </div>
+
+
+                <div class="col-12 col-sm-6 mt-2">
+                    <label class="smalllabel" for="additional_websites">
+            
+Please enter any additional websites where you sell goods / services, separated by comma (,)
+
+          </label>
+
+                    <input type="tel" class="form-control" placeholder="Enter websites" name="additional_websites" id="additional_websites" formControlName="additional_websites">
+
+                </div>
+            </div>
+            <div class="form-row justify-content-between mt-2">
+                <div class="col-12 mt-2">
+                    <div class="form-row justify-content-md-center checkboxrowwithpadding mt-3 mr-md-1 bg-cdg010 p-3 rounded">
+                        <div class="col-12">
+                            <label class="smalllabel">
+                                Do you sell goods or services
+                      </label>
+
+                        </div>
+
+
+
+                        <div class="col-2 " *ngFor="let gs of goodServeArray">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" formControlName="goodServe" id="{{gs.industry}}" value="{{gs.industry}}" [checked]="goodServe" name="goodServe" (change)="setGoodServe($event, gs.id, gs.industry)">
+                                <label class="form-check-label" for="{{gs.industry}}">
+                {{gs.industry}}
+                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="form-row mt-2 animated bounceIn" *ngIf="industry.length > 0">
+                <div class="col-12 mt-2">
+                    <div class="form-row justify-content-md-center">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label class="smalllabel" for="industry"><span *ngIf="goodServe=='Services'">What is the primary category of Service you provide?</span><span *ngIf="goodServe=='Goods'">What category of Goods do you sell?</span><span class="text-danger">*</span></label>
+
+                                <select name="industry" id="industry" class="form-control" formControlName="industry" (change)="setSubGoodServe(cuasales.controls['industry'].value)">
+                                        <option *ngFor="let i of industry" value="{{ i.id }}|{{ i.industry }}">{{ i.industry }}</option>
+                                        </select>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="form-row mt-2 animated bounceIn" *ngIf="subindustry.length > 0">
+                <div class="col-12 mt-2">
+                    <div class="form-row justify-content-md-center">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label class="smalllabel" for="subindustry">Please select the main type of {{ subGoodServe }} <span *ngIf="goodServe=='Goods'">Goods</span><span *ngIf="goodServe=='Services'">Services</span> you sell<span class="text-danger">*</span></label>
+
+                                <select name="subindustry" id="subindustry" class="form-control" formControlName="subindustry">
+                                            <option *ngFor="let si of subindustry" value="{{ si.id }}">{{ si.industry }}</option>
+                                            </select>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="form-row mt-2">
+                <div class="col-12 col-sm-6 mt-4">
+                    <label class="smalllabel" for="SIC">SIC Code (optional)</label>
+                    <input type="text" class="form-control" name="SIC" id="SIC" placeholder="SIC Code" formControlName="SIC">
+                </div>
+                <div class="col-12 col-sm-6 mt-4">
+                    <label class="smalllabel" for="SIC">Business Description</label>
+                    <textarea class="form-control" id="business_description" rows="3" name="business_description" formControlName="business_description"></textarea>
+                </div>
+
+            </div>
+
+
+
+
+            <div class="form-row">
+                <div class="col-12">
+                    <div class="form-row justify-content-md-center checkboxrowwithpadding mt-3 ml-md-1 bg-cdg010 p-3 rounded">
+                        <div class="col-12">
+                            <label class="smalllabel">
+                                         Do you do mail orders or telephone orders
+                          </label>
+
+                        </div>
+                        <div class="col-2 ">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" formControlName="mail_phone" id="mail_phone1" value="mail" [checked]="ismail" (change)="setMailPhone($event, 'mail')" name="mail_phone">
+                                <label class="form-check-label" for="mail_phone1">
+                    Mail
+                    </label>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" formControlName="mail_phone" id="mail_phone2" value="phone" [checked]="isphone" (change)="setMailPhone($event, 'phone')" name="mail_phone">
+                                <label class="form-check-label" for="mail_phone2">
+                    Telephone
+                    </label>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+            <div class="form-row">
+                <div class="col-12">
+                    <div class="form-row justify-content-md-center checkboxrowwithpadding mt-3 mr-md-1 bg-cdg010 p-3 rounded">
+                        <div class="col-12">
+                            <label class="smalllabel">
+                            Do you take payment before delivery of goods or services?
+                  </label>
+
+                        </div>
+                        <div class="col-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" formControlName="payment_before" id="payment_before1" value="true" [checked]="payment_before" (change)="setPaymentBefore($event, true)" name="payment_before">
+                                <label class="form-check-label" for="payment_before1">
+            Yes
+            </label>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" formControlName="payment_before" id="payment_before2" value="false" [checked]="!payment_before" (change)="setPaymentBefore($event, false)" name="payment_before">
+                                <label class="form-check-label" for="payment_before2">
+            No
+            </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group dbagroup  animated bounceIn" *ngIf="payment_before">
+
+                        <div class="form-row">
+                            <div class="col-12">
+                                <label for="dbaname" class="smalllabel">How far in advance? <span class="text-danger">*</span></label>
+                                <select class="form-control" name="time_in_advance" formControlName="time_in_advance" id="time_in_advance">
+                                        <option *ngFor="let o of time_in_advance_array" [ngValue]="o.val">{{ o.op }}</option>
+                                </select>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="col-12">
+                    <div class="form-row justify-content-md-center checkboxrowwithpadding mt-3 ml-md-1 bg-cdg010 p-3 rounded">
+                        <div class="col-12">
+                            <label class="smalllabel">
+                                         Do you do use a third party fulfillment center?
+                          </label>
+
+                        </div>
+                        <div class="col-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" formControlName="third_party" id="third_party1" value="true" [checked]="third_party" (change)="setThirdParty($event, true)" name="third_party">
+                                <label class="form-check-label" for="third_party1">
+                    Yes
+                    </label>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" formControlName="third_party" id="third_party2" value="false" [checked]="!third_party" (change)="setThirdParty($event, false)" name="third_party">
+                                <label class="form-check-label" for="third_party2">
+                    No
+                    </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group dbagroup  animated bounceIn" *ngIf="third_party">
+
+                        <div class="form-row">
+                            <div class="col-12">
+                                <label for="fulfillment_name" class="smalllabel">What is the name and address of the fulfillment center? <span class="text-danger">*</span></label>
+
+                                <input class="form-control" placeholder="Enter Name and Center" name="fulfillment_name" formControlName="fulfillment_name">
+
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-row mt-3">
+                            <div class="col-12">
+                                <div class="form-row">
+                                    <div class="col-12 text-left mb-2">
+                                        <small><a [routerLink]="" (click)="showSelectAddress()">Click here to select from saved address</a></small>
+                                    </div>
+                                    <div class="col-12 mb-2">
+                                        <label class="smalllabel" for="fulfillment_address">Address<span class="text-danger">*</span></label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text"><span class="fas fa-building"></span>
+                                                </div>
+                                            </div>
+                                            <input placeholder="Type your address" autocorrect="off" id="fulfillment_address" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search formControlName="fulfillment_address" name="fulfillment_address">
+                                        </div>
+                                    </div>
+                                    <div class="col-12 mb-2">
+                                        <label class="smalllabel" for="fulfillment_suite">Suite or Apartment Number</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text"><span class="far fa-building"></span>
+                                                </div>
+                                            </div>
+                                            <input type="text" class="form-control" placeholder="Suite Number" name="fulfillment_suite" id="fulfillment_suite" formControlName="fulfillment_suite">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom" name="fulfillment_map">
+                                    <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+                                </agm-map>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+
+
+                    <div class="form-row mt-3">
+                        <div class="col-12 col-md-6">
+                            <div class="form-row justify-content-md-center checkboxrowwithpadding mt-3 ml-md-1 bg-cdg010 p-3 rounded">
+                                <div class="col-12">
+                                    <label class="smalllabel">Do you have a refund policy?</label>
+                                </div>
+                                <div class="col-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" formControlName="has_refund_policy" id="has_refund_policy1" value="true" [checked]="has_refund_policy" (change)="setRefundPolicy($event, true)" name="has_refund_policy">
+                                        <label class="form-check-label" for="has_refund_policy1">
+                                    Yes
+                                    </label>
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" formControlName="has_refund_policy" id="has_refund_policy2" value="false" [checked]="!has_refund_policy" (change)="setRefundPolicy($event, false)" name="has_refund_policy">
+                                        <label class="form-check-label" for="has_refund_policy2">
+                                    No
+                                    </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group dbagroup  animated bounceIn" *ngIf="has_refund_policy">
+
+                                <div class="form-row">
+                                    <div class="col-12">
+                                        <label for="fulfillment_name" class="smalllabel">Refund Policy <span class="text-danger">*</span></label>
+
+                                        <textarea class="form-control" placeholder="Enter your refund policy" name="refund_policy" formControlName="refund_policy"></textarea>
+
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col-12">
+                                        <label for="refund_policy_link" class="smalllabel">Link to your Refund Policy (optional)</label>
+
+                                        <input class="form-control" placeholder="Enter your refund policy link" name="refund_policy_link" formControlName="refund_policy_link" type="text">
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="form-row justify-content-md-center checkboxrowwithpadding mt-3 ml-md-1 bg-cdg010 p-3 rounded">
+                                <div class="col-12">
+                                    <label class="smalllabel">Is your Business Seasonal?</label>
+                                </div>
+                                <div class="col-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" formControlName="seasonal" id="seasonal1" value="true" [checked]="seasonal" (change)="setSeasonal($event, true)" name="seasonal">
+                                        <label class="form-check-label" for="seasonal1">
+                                            Yes
+                                            </label>
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" formControlName="seasonal" id="seasonal2" value="false" [checked]="!seasonal" (change)="setSeasonal($event, false)" name="seasonal">
+                                        <label class="form-check-label" for="seasonal2">
+                                            No
+                                            </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group dbagroup  animated bounceIn" *ngIf="seasonal">
+
+                                <div class="form-row">
+                                    <div class="col-12">
+                                        <label class="smalllabel">What months do you Operate? (Check all that apply)</label>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col-4">
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" name="seasonal_jan" value="true" [checked]="seasonal_jan" id="seasonal_jan">
+                                            <label for="seasonal_jan" class="smalllabel">Jan</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" name="seasonal_feb" value="true" [checked]="seasonal_feb" id="seasonal_feb">
+                                            <label for="seasonal_feb" class="smalllabel">Feb</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" name="seasonal_mar" value="true" [checked]="seasonal_mar" id="seasonal_mar">
+                                            <label for="seasonal_mar" class="smalllabel">Mar</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" name="seasonal_apr" value="true" [checked]="seasonal_apr" id="seasonal_apr">
+                                            <label for="seasonal_apr" class="smalllabel">Apr</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" name="seasonal_may" value="true" [checked]="seasonal_may" id="seasonal_may">
+                                            <label for="seasonal_may" class="smalllabel">May</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" name="seasonal_jun" value="true" [checked]="seasonal_jun" id="seasonal_jun">
+                                            <label for="seasonal_jun" class="smalllabel">Jun</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" name="seasonal_jul" value="true" [checked]="seasonal_jul" id="seasonal_jul">
+                                            <label for="seasonal_jul" class="smalllabel">Jul</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" name="seasonal_aug" value="true" [checked]="seasonal_aug" id="seasonal_aug">
+                                            <label for="seasonal_aug" class="smalllabel">Aug</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" name="seasonal_sep" value="true" [checked]="seasonal_sep" id="seasonal_sep">
+                                            <label for="seasonal_sep" class="smalllabel">Sept</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" name="seasonal_oct" value="true" [checked]="seasonal_oct" id="seasonal_oct">
+                                            <label for="seasonal_oct" class="smalllabel">Oct</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" name="seasonal_nov" value="true" [checked]="seasonal_nov" id="seasonal_nov">
+                                            <label for="seasonal_nov" class="smalllabel">Nov</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" name="seasonal_dec" value="true" [checked]="seasonal_dec" id="seasonal_dec">
+                                            <label for="seasonal_dec" class="smalllabel">Dec</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+
+
+
+            <div class="row justify-content-between mt-3">
+                <div class="col-12 col-sm-6 col-lg-4 mb-2">
+                    <button type="button" class="btn btn-info btn-cuapp btn-block"><i class="fas fa-arrow-circle-left"></i> &nbsp;  Back  </button>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4 mb-2">
+
+                    <button type="submit" class="btn btn-info btn-cuapp btn-block" [disabled]="isSubmitting">
+                                    <div class="lds-css ng-scope" *ngIf="isSubmitting"><app-loader></app-loader></div>
+                                <span *ngIf="!isSubmitting"> Save and continue &nbsp; <i class="fas fa-save"></i></span></button>
+
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    {{ cuasales.valid }}
+</form>

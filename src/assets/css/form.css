@@ -1,0 +1,28 @@
+.leadform {
+    background: #fff;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 4px;
+    text-align: center;
+    box-shadow: 0 0 50px 10px rgba(0, 0, 0, .05);
+    >h4 {
+        font-weight: 600;
+        margin-bottom: 35px;
+    }
+    input {
+        background: #f6f6f6;
+        color: #aaa;
+    }
+}
+
+.form-small-text {
+    display: block;
+    margin-top: 30px;
+    color: #bbbbbb;
+    font-size: 12px;
+}
+
+.nice-select {
+    color: #aaa;
+}

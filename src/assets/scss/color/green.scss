@@ -1,0 +1,37 @@
+
+a:hover, a:focus, a:active {
+  color: #304A1E;
+}
+.btn-theme, .swiper-pagination-bullet-active {
+  background: #304A1E;
+  &:hover, &:focus{
+     background: darken(#304A1E, 10%) !important;
+  }
+} 
+.plan-duration {
+  color: #fff;
+}
+
+#intro-cdglanding::after, #video::after  {
+    background: rgba(#304A1E, 0.6);
+}
+.scroll-top,
+.newsletter-block, 
+.plan-head,
+.newsletter .btn:hover{
+  background: #304A1E;
+  color: #fff;
+}
+.promo-list > ul > li span,
+.highlight-text,
+.ratting, 
+.copyright-text i,
+.faq-title > a,
+.plan-details ul li i{
+  color: #304A1E;
+}
+
+.author-img.slick-center,
+.plan.recommended{
+  border-color: #304A1E;
+}

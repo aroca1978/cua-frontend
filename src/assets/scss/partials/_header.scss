@@ -1,0 +1,55 @@
+.site-header {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background: #fff;
+  transition: .5s;
+  display: block;
+  &.navbar-fixed-top {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  }
+}
+.navbar-brand {
+  padding-top: 0;
+}
+.main-nav {
+  > .nav-item {
+    > .nav-link {      
+      text-transform: capitalize;
+      padding-left: 10px;
+      padding-right: 10px;
+      &.btn-menu{
+        min-width: 120px;
+      }
+      &:hover, &:focus {
+        background:inherit;
+      }
+    }
+  }
+}
+
+@media screen and(max-width:991px){
+.navbar-toggler{
+    background:$base-color;
+    color: #fff;
+  cursor: pointer;
+}
+  .navbar-toggler-icon {
+    margin: 0;
+    width: auto;
+    height: auto;
+    padding: 3px;
+  }
+  
+}
+
+
+
+
+
+
+
+
+
+

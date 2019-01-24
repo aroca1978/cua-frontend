@@ -1,0 +1,100 @@
+#cdgapply {
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+.containeruapp {
+    padding-top: 0px;
+    margin-top: -70px;
+}
+
+#cdgapply div.cdgleft-tab-menu {
+    padding-right: 0;
+    padding-left: 0;
+    padding-bottom: 0;
+}
+
+#cdgapply div.cdgleft-tab-menu div.list-group {
+    margin-bottom: 0;
+}
+
+#cdgapply div.cdgleft-tab-menu div.list-group>div {
+    margin-bottom: 0;
+}
+
+#cdgapply div.cdgleft-tab-menu div.list-group>a .glyphicon,
+#cdgapply div.cdgleft-tab-menu div.list-group>a .fa {
+    color: #324A21;
+}
+
+#cdgapply div.cdgleft-tab-menu div.list-group>div:first-child {
+    border-top-right-radius: 0;
+    -moz-border-top-right-radius: 0;
+}
+
+#cdgapply div.cdgleft-tab-menu div.list-group>div:last-child {
+    border-bottom-right-radius: 0;
+    -moz-border-bottom-right-radius: 0;
+}
+
+#cdgapply div.cdgleft-tab-menu div.list-group>div.active,
+#cdgapply div.cdgleft-tab-menu div.list-group>div.active .glyphicon,
+#cdgapply div.cdgleft-tab-menu div.list-group>div.active .fa {
+    background-color: #324A21;
+    background-image: #324A21;
+    color: #ffffff;
+    border-color: #E1E9E3;
+}
+
+.list-group-item {
+    background-color: #E1E9E3;
+}
+
+.list-group-item {
+    color: #324A21;
+}
+
+#cdgapply div.cdgleft-tab-menu div.list-group>div.active:after {
+    content: '';
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    margin-top: -13px;
+    border-left: 0;
+    border-bottom: 13px solid transparent;
+    border-top: 13px solid transparent;
+    border-left: 10px solid #324A21;
+}
+
+.bgcdg-green {
+    background-color: #E1E9E3;
+}
+
+.bg-dark-green {
+    background-color: #324A21;
+    color: white;
+}
+
+.p20 {
+    padding-right: 35px;
+}
+
+.smalllabel {
+    font-size: 0.85em;
+    line-height: 1.3em;
+}
+
+.appform {
+    font-size: 0.8em;
+}
+
+.form-row {
+    margin-top: 0.45em;
+}
+
+.checkboxrowwithpadding {
+    background-color: rgb(228, 228, 228);
+    padding: 0.5em;
+    padding-bottom: 0.8em;
+}

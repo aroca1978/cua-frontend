@@ -1,0 +1,309 @@
+<form [formGroup]="cuabusinessinfo" (ngSubmit)="saveBusinessInfo()" ngNativeValidate>
+    <div class="row">
+        <div class="col">
+            <h3 class="mt-2">Business Info</h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <hr>
+            <p class="mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, aliquam vitae. Beatae, velit blanditiis nihil aliquam molestias saepe! Exercitationem id rerum quo tempore maxime ipsam maiores cum quisquam, voluptatibus sequi.</p>
+            <div class="form-row justify-content-between">
+                <div class="col-12">
+                    <label for="legal_name" class="smalllabel">Legal Name  <span class="text-danger">*</span></label>
+                    <input class="form-control" placeholder="Full Business Name" type="text" formControlName="legal_name" name="legal_name" [ngClass]="{'has-danger': cuabusinessinfo.controls['legal_name'].invalid && (cuabusinessinfo.controls['legal_name'].dirty || cuabusinessinfo.controls['legal_name'].touched) }">
+                </div>
+            </div>
+            <div class="form-row mt-4">
+                <div class="col-12 col-lg-6">
+                    <div class="col-12 mb-3">
+                        <label class="smalllabel" for="business_address">Address<span class="text-danger">*</span></label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><span class="fas fa-building"></span>
+                                </div>
+                            </div>
+
+                            <input placeholder="Start typing your address and select it from results" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search formControlName="business_address" name="business_address">
+
+
+
+                        </div>
+                    </div>
+                    <div class="col-12 mb-3">
+                        <label class="smalllabel" for="business_suite">Suite or Apartment Number</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><span class="far fa-building"></span>
+                                </div>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Suite Number" formControlName="business_suite" id="business_suite" name="business_suite">
+                        </div>
+                    </div>
+                    <div class="col-12 text-right mb-3">
+                        <small><a [routerLink]="" (click)="showSelectAddress('business_address')">Click here to select from saved address</a></small>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom" name="legal_map">
+                        <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+                    </agm-map>
+
+                </div>
+            </div>
+
+            <hr>
+            <div class="form-row">
+                <div class="col-xs-12 col-sm-6">
+                    <label class="smalllabel" for="business_phone">Phone number <span class="text-danger">*</span></label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text"><span class="fas fa-phone"></span>
+                            </div>
+                        </div>
+                        <input type="tel" class="form-control" placeholder="XXX-XXX-XXXX" name="business_phone" id="business_phone" [textMask]="{mask: mask}" formControlName="business_phone">
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <label class="smalllabel" for="business_fax">Fax number</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text"><span class="fas fa-fax"></span>
+                            </div>
+                        </div>
+                        <input type="tel" class="form-control" placeholder="XXX-XXX-XXXX" name="business_fax" id="business_fax" [textMask]="{mask: mask}" formControlName="business_fax">
+                    </div>
+                </div>
+
+            </div>
+            <div class="form-row justify-content-md-center checkboxrowwithpadding mt-4 bg-cdg010 p-3 rounded">
+                <div class="col-12">
+                    <label class="smalllabel">
+            Do you have a DBA?
+          </label>
+
+                </div>
+                <div class="col-2 ">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" formControlName="hasdba" id="gotDba1" value="true" [checked]="hasdba" (change)="setHasDba($event, hasdba)" name="hasdba">
+                        <label class="form-check-label" for="gotDba1">
+    Yes
+    </label>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" formControlName="hasdba" id="gotDba2" value="false" [checked]="!hasdba" (change)="setHasDba($event, hasdba)" name="hasdba">
+                        <label class="form-check-label" for="gotDba2">
+    No
+    </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group dbagroup  animated bounceIn" *ngIf="hasdba">
+
+                <div class="form-row">
+                    <div class="col-12">
+                        <label for="dbaname" class="smalllabel">DBA Name <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" name="dbaName" id="dbaName" placeholder="DBA Name" formControlName="dbaName">
+                    </div>
+                </div>
+                <div class="form-row mt-3">
+                    <div class="col-lg-6">
+                        <div class="form-row">
+                            <div class="col-12 text-left mb-2">
+                                <small><a [routerLink]="" (click)="showSelectAddress('dba_address')">Click here to select from saved address</a></small>
+                            </div>
+                            <div class="col-12 mb-2">
+                                <label class="smalllabel" for="dba_address">Address<span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text"><span class="fas fa-building"></span>
+                                        </div>
+                                    </div>
+                                    <input placeholder="Type your address" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search formControlName="dba_address" name="dba_address">
+                                </div>
+                            </div>
+                            <div class="col-12 mb-2">
+                                <label class="smalllabel" for="dba_suite">Suite or Apartment Number</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text"><span class="far fa-building"></span>
+                                        </div>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="Suite Number" name="dba_suite" id="dba_suite" formControlName="dba_suite">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <agm-map [latitude]="latitude2" [longitude]="longitude2" [scrollwheel]="false" [zoom]="zoom2" name="dba_map">
+                            <agm-marker [latitude]="latitude2" [longitude]="longitude2"></agm-marker>
+                        </agm-map>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-xs-12 col-sm-6">
+                        <label class="smalllabel" for="dbaPhone">DBA Phone number <span class="text-danger">*</span></label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><span class="fas fa-phone"></span>
+                                </div>
+                            </div>
+                            <input type="tel" class="form-control" placeholder="XXX-XXX-XXXX" name="dbaPhone" id="dbaPhone" [textMask]="{mask: mask}" formControlName="dbaPhone">
+
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <label class="smalllabel" for="dbaFax">DBA Fax number</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><span class="fas fa-fax"></span>
+                                </div>
+                            </div>
+                            <input type="tel" class="form-control" placeholder="XXX-XXX-XXXX" name="dbaFax" id="dbaFax" [textMask]="{mask: mask}" formControlName="dbaFax">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-12 col-md-6">
+                    <div class="form-row justify-content-md-center checkboxrowwithpadding mt-3 mr-md-1 bg-cdg010 p-3 rounded">
+                        <div class="col-12">
+                            <label class="smalllabel">
+                        Have you ever had a personal bankruptcy?
+              </label>
+
+                        </div>
+                        <div class="col-2 ">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" formControlName="personal_bankrupt" id="personal_bankrupt1" value="true" [checked]="personal_bankrupt" (change)="setBankrupt($event, personal_bankrupt)" name="personal_bankrupt">
+                                <label class="form-check-label" for="personal_bankrupt1">
+        Yes
+        </label>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" formControlName="personal_bankrupt" id="personal_bankrupt2" value="false" [checked]="!personal_bankrupt" (change)="setBankrupt($event, personal_bankrupt)" name="personal_bankrupt">
+                                <label class="form-check-label" for="personal_bankrupt2">
+        No
+        </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group dbagroup  animated bounceIn" *ngIf="personal_bankrupt">
+
+                        <div class="form-row">
+                            <div class="col-12">
+                                <label for="dbaname" class="smalllabel">When did this bankruptcy occur? <span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <input class="form-control" placeholder="mm/dd/yyyy" name="personal_bankrupt_date" (ngModelChange)="onSelectDate($event)" formControlName="personal_bankrupt_date" ngbDatepicker #dbbd="ngbDatepicker" readonly="readonly" container="body">
+                                    <div class="input-group-append">
+                                        <div class="input-group-text" (click)="dbbd.toggle()"><span class="fas fa-calendar-alt"></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="form-row justify-content-md-center checkboxrowwithpadding mt-3 ml-md-1 bg-cdg010 p-3 rounded">
+                        <div class="col-12">
+                            <label class="smalllabel">
+                                 Have you ever had a business bankruptcy?
+                  </label>
+
+                        </div>
+                        <div class="col-2 ">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" formControlName="business_bankrupt" id="business_bankrupt1" value="true" [checked]="business_bankrupt" (change)="setBusBankrupt($event, business_bankrupt)" name="business_bankrupt">
+                                <label class="form-check-label" for="business_bankrupt1">
+            Yes
+            </label>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" formControlName="business_bankrupt" id="business_bankrupt2" value="false" [checked]="!business_bankrupt" (change)="setBusBankrupt($event, business_bankrupt)" name="business_bankrupt">
+                                <label class="form-check-label" for="business_bankrupt2">
+            No
+            </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group dbagroup  animated bounceIn" *ngIf="business_bankrupt">
+
+                        <div class="form-row">
+                            <div class="col-12">
+                                <label for="dbaname" class="smalllabel">When did this bankruptcy occur? <span class="text-danger">*</span></label>
+                                <div class="input-group">
+                                    <input class="form-control" placeholder="mm/dd/yyyy" name="business_bankrupt_date" (ngModelChange)="onSelectDate($event)" formControlName="business_bankrupt_date" ngbDatepicker #dbbd="ngbDatepicker" readonly="readonly" container="body">
+                                    <div class="input-group-append">
+                                        <div class="input-group-text" (click)="dbbd.toggle()"><span class="fas fa-calendar-alt"></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="form-row justify-content-between behindo">
+                <div class="col-12">
+                    <label class="smalllabel" for="ownership_type">What Kind of Business is it?<span class="text-danger">*</span></label>
+                    <select name="ownership_type" id="ownership_type" class="form-control" formControlName="ownership_type">
+                      <option value="" selected disabled>Please select from the list</option>
+                      <option *ngFor="let o of ownershiptypes" [ngValue]="o.val">{{ o.op }}</option>
+                  </select>
+                </div>
+
+            </div>
+
+
+
+
+
+            <div class="form-row">
+                <div class="col-xs-12 col-sm-6">
+                    <label class="smalllabel" for="taxIdNum">
+                        Tax ID Number
+                      </label>
+
+                    <input type="text" class="form-control" placeholder="#########" name="taxIdNum" id="taxIdNum" [textMask]="{mask: mask2}" formControlName="taxIdNum">
+
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <label class="smalllabel" for="businessBirthday">When was your business started</label>
+
+
+
+                    <div class="input-group">
+                        <input class="form-control" placeholder="mm-dd-yyyy" name="businessBirthday" (ngModelChange)="onSelectDate($event, '1')" formControlName="businessBirthday" ngbDatepicker #bbday="ngbDatepicker" readonly="readonly" container="body">
+                        <div class="input-group-append">
+                            <div class="input-group-text" (click)="bbday.toggle()"><span class="fas fa-calendar-alt"></span></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row justify-content-between mt-3">
+                <div class="col-12 col-sm-6 col-lg-4 mb-2">
+                    <button type="button" class="btn btn-info btn-cuapp btn-block"><i class="fas fa-arrow-circle-left"></i> &nbsp;  Back  </button>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4 mb-2">
+
+                    <button type="submit" class="btn btn-info btn-cuapp btn-block" [disabled]="isSubmitting">
+                                <div class="lds-css ng-scope" *ngIf="isSubmitting"><app-loader></app-loader></div>
+                            <span *ngIf="!isSubmitting"> Save and continue &nbsp; <i class="fas fa-save"></i></span></button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    {{ cuabusinessinfo.valid }}
+</form>

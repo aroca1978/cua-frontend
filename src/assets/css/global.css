@@ -1,0 +1,221 @@
+/******************\
+#Global utility classes. applicable for style any element
+/******************/
+
+.pagesstyle .btn {
+    cursor: pointer;
+}
+
+.pagesstyle .btn-theme {
+    background: #304A1E;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 15px 30px;
+    color: #fff;
+    line-height: normal;
+    transition: .5s;
+    text-transform: uppercase;
+    min-width: 200px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.pagesstyle .btn-round {
+    border-radius: 100px;
+}
+
+.pagesstyle .btn-theme:hover,
+.pagesstyle .btn-theme:focus {
+    background: darken(#304A1E, 10%) !important;
+    color: #fff;
+}
+
+.social-share>li:first-child {
+    font-size: 20px;
+    font-weight: 600;
+    color: #000;
+}
+
+.pagesstyle .info-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: inherit;
+}
+
+.pagesstyle .section-title {
+    font-size: 48px;
+    color: #000;
+    font-weight: 300;
+    margin-top: 0;
+    font-family: 'Raleway', sans-serif;
+    line-height: 60px;
+    margin-bottom: 20px;
+}
+
+.pagesstyle .section-tagline {
+    max-width: 700px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+.pagesstyle .icon-block {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 70px;
+    height: 70px;
+    background: #72c02c;
+    border-radius: 50%;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 30px;
+    color: #fff;
+    margin: 0 auto;
+}
+
+.bg-yellow {
+    background: #ffb81e;
+}
+
+.bg-pink {
+    background: #ef8aeb;
+}
+
+.bg-blue-light {
+    background: #58c9e9;
+}
+
+.bg-green {
+    background: #77de51;
+}
+
+.bg-red-light {
+    background: #f75e61;
+}
+
+.bg-purple {
+    background: #8e71ec;
+}
+
+.bg-gray {
+    background: #f9f9f9;
+}
+
+.bg-cdg01 {
+    background: #304A1E;
+}
+
+.bg-cdg02 {
+    background: #6A8856;
+}
+
+.bg-cdg03 {
+    background: #415632;
+}
+
+.bg-cdg04 {
+    background: #20380F;
+}
+
+.bg-cdg05 {
+    background: #102303;
+}
+
+
+/* complementary colors */
+
+.bg-cdg010 {
+    background: #dbe0cc;
+}
+
+.bg-cdg06 {
+    background: #4C1F2B;
+}
+
+.bg-cdg07 {
+    background: #24040C;
+}
+
+.bg-cdg08 {
+    background: #390F1B;
+}
+
+.bg-cdg09 {
+    background: #58333D;
+}
+
+.bg-cdg10 {
+    background: #8B5866;
+}
+
+
+/*
+
+//base 
+
+$color0 = '#304A1E';
+$color1 = '#6A8856';
+$color2 = '#415632';
+$color3 = '#20380F';
+$color4 = '#102303'; 
+
+//complementary
+
+$color5 = '#4C1F2B';
+$color6 = '#24040C';
+$color7 = '#390F1B';
+$color8 = '#58333D';
+$color9 = '#8B5866';
+
+*/
+
+.highlight-text {
+    color: #304A1E;
+}
+
+.contact-message {
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    display: block;
+    transition: .5s;
+    color: #ef4b4b;
+    text-align: left;
+}
+
+
+/******************\
+# END global utility classes
+/******************/
+
+@media screen and(max-width:767px) {
+    .pagesstyle section {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+    .cdglanding-title {
+        font-size: 38px;
+    }
+    .section-title {
+        font-size: 34px;
+    }
+}
+
+@media screen and(max-width:480px) {
+    .pagesstyle .btn.btn-theme.btn-round {
+        display: block;
+        margin: 0;
+        margin-bottom: 10px;
+        float: none !important;
+    }
+}

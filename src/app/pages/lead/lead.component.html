@@ -1,0 +1,51 @@
+<section id="intro-cdglanding">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-7 cdglanding-text my-4">
+                <h1 class="cdglanding-title">
+                    With a CDGcommerce Merchant Account
+                </h1>
+                <p class="cdglanding-tagline">
+                    Take payments on your website, shopping cart or billing system. Swipe cards &amp; process payments. In-store or on-site. Accept mobile payments. Anywhere.
+                </p>
+                <div class="intro-btn">
+                    <a href="#features" class="btn btn-theme btn-round scrolling">Learn more</a>
+
+                </div>
+            </div>
+            <!-- END col-lg-6 cdglanding-text-->
+
+
+            <div class="col-lg-5">
+                <form ngNativeValidate [formGroup]="cdgleadform" (ngSubmit)="submitLead()" class="leadform wow fadeIn" id="cdgleadform" action="index.html" autocomplete="off" role="form">
+
+                    <h4>Apply Now!</h4>
+
+                    <div class="form-group mb-0">
+                        <input formControlName="fName" name="fName" id="fName" class="form-control" type="text" required placeholder="First Name">
+                    </div>
+                    <div class="form-group mb-0">
+                        <input formControlName="lName" name="lName" id="lName" class="form-control" type="text" required placeholder="Last Name">
+                    </div>
+                    <div class="form-group mb-0">
+                        <input formControlName="email" name="email" id="email" class="form-control" type="email" required placeholder="E-mail">
+                    </div>
+                    <div class="form-group mb-0">
+                        <input formControlName="phone" name="phone" id="phone" class="form-control" type="tel" required placeholder="Phone">
+                    </div>
+
+                    <button class="btn btn-theme btn-block" type="submit" name="register" [disabled]="isSubmitting">
+                            <div class="lds-css ng-scope" *ngIf="isSubmitting"><div style="width:100%;height:100%" class="lds-eclipse"><div></div></div></div>
+                        <span *ngIf="!isSubmitting">Continue</span></button>
+
+                </form>
+            </div>
+            <!-- END col-lg-5-->
+
+        </div>
+        <!-- END row-->
+    </div>
+    <!-- END container-->
+</section>
+<!-- END intro-cdglanding-->

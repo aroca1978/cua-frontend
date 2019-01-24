@@ -1,0 +1,114 @@
+/******************\
+base element default style
+/******************/
+
+
+$base-color:#72c02c;
+$pf:'Poppins', sans-serif;
+$sf:'Raleway', sans-serif;
+
+body {
+  color: #666666;  
+  line-height: 30px;
+  font-family:$sf;
+  font-weight: normal;
+  padding-top: 70px;
+}
+
+img {
+  max-width: 100%; 
+}
+
+a {
+  color: inherit;
+  font-size: inherit;
+  -webkit-transition: .3s;
+  -o-transition: .3s;
+  transition: .3s; 
+}
+
+a:hover, a:focus, a:active {
+  text-decoration: none;
+  color: $base-color;
+  outline: none; 
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #000; 
+  font-weight: normal;
+}
+
+h1, h2 {
+  font-size: 48px;
+}
+h3 {
+  font-size: 38px;
+}
+h4 {
+  font-size: 30px;
+}
+h5 {
+  font-size: 24px;
+}
+h6 {
+  font-size: 20px;
+}
+section {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+input, textarea {
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid #f6f6f6;
+  margin-bottom: 15px;
+  box-shadow: none;
+  border-radius: 4px;
+  color: #666;
+  font-family: inherit;
+}
+pre, code, blockquote {
+  background-color: #F5F5F5;
+  border-color: $base-color;
+  border-style: solid;
+  border-width: 0px 0px 0px 4px;
+  padding:20px;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+pre, code {
+    font-family: monospace;
+}
+::selection {
+  background: $base-color;
+  color: #fff;
+}
+::-webkit-input-placeholder {
+  opacity:1;
+  color:inherit;
+}
+::-moz-placeholder {
+  opacity:1;
+  color:inherit;
+}
+:-ms-input-placeholder {
+  opacity:1;
+  color:inherit;
+}
+:-moz-placeholder {
+  opacity:1;
+  color:inherit;
+}
+:focus, :active {
+  outline: none;
+}
+
+
+
+
+
+
+
+
+

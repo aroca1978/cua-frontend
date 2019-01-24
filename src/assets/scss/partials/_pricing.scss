@@ -1,0 +1,81 @@
+.plan {
+  background: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 0 30px 0 rgba(0,0,0,.1);
+  transition: .5s;
+  &.recommended {
+    border: 3px solid $base-color;
+  }
+  &:hover {
+    box-shadow: 0 0 50px 0 rgba(0,0,0,.20);
+  }
+}
+.plan-head {
+  background:$base-color;
+  color: #fff;
+  padding: 30px;
+  
+    > h4 {
+      font-family: Courgette,cursive;
+      font-size: 30px;
+      color: #fff;
+      margin: 0;
+      font-style: italic;
+      > sup {
+        font-size: 16px;
+      }
+    }
+  
+  > p {
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 0;
+  }
+}
+
+.plan-duration {
+  background: #fff;
+  box-shadow: 0 0 30px 0px rgba(0,0,0,.10);
+  margin-top: -30px;
+  position: relative;
+  color: #000;
+  text-transform: inherit;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.plan-details {
+    padding-top: 20px;
+   ul {
+     padding-left: 0;
+     list-style: none;
+     li{
+        padding-top: 5px;
+        padding-bottom: 5px;
+        background: #f6f6f6;
+       &.text-mute{
+         color: #bbbbbb;
+       }
+       i {
+         color: $base-color;
+       }
+       &:nth-child(odd){
+         background: #f6f6f6;
+       }
+       &:nth-child(even) {
+         padding-top: 10px;
+         padding-bottom: 10px;
+         background: #fff;
+       }
+    }
+  }
+}
+
+.plan-action {
+  > .btn {
+    letter-spacing: 2px;
+  }
+}

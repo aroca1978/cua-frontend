@@ -1,0 +1,104 @@
+<form [formGroup]="cuabusinessinfo" (ngSubmit)="saveBusinessInfo();" class="appform wow fadeIn" id="cua_businessinfo" action="businessinfo" autocomplete="off" novalidate="novalidate">
+    <div class="row">
+        <div class="col">
+            <h3 class="mt-2">Business Info</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <hr>
+            <p class="mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, aliquam vitae. Beatae, velit blanditiis nihil aliquam molestias saepe! Exercitationem id rerum quo tempore maxime ipsam maiores cum quisquam, voluptatibus sequi.</p>
+            <div class="form-row justify-content-between">
+                <div class="col-12">
+                    <label for="legal_name" class="smalllabel">Legal Name  <span class="text-danger">*</span></label>
+                    <input class="form-control" placeholder="Full Business Name" [formControlName]="legal_name" id="legal_name" required>
+                </div>
+            </div>
+
+
+
+
+            <div class="form-row mt-4">
+                <div class="col-12 col-md-6">
+                    <div class="col-12">
+                        <label class="smalllabel" for="business_address">Address<span class="text-danger">*</span></label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><span class="fas fa-building"></span>
+                                </div>
+                            </div>
+
+                            <input placeholder="Start typing your address and select it from results" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControlName]="business_address">
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <label class="smalllabel" for="business_suite">Suite or Apartment Number</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><span class="far fa-building"></span>
+                                </div>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Suite Number" [formControlName]="business_suite" id="business_suite">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+
+                </div>
+            </div>
+            <div class="form-row mt-2">
+                <div class="col-12 text-right ">
+                    <small><a [routerLink]="" (click)="copyPersonalAddress()">Use same address as in Personal Info</a></small>
+                </div>
+            </div>
+            <hr>
+            <div class="form-row">
+                <div class="col-xs-12 col-sm-4">
+                    <label class="smalllabel" for="business_phone">Phone number <span class="text-danger">*</span></label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text"><span class="fas fa-phone"></span>
+                            </div>
+                        </div>
+                        <input type="phone" class="form-control" placeholder="XXX-XX-XXXX" [formControlName]="business_phone" id="business_phone" required>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                    <label class="smalllabel" for="business_fax">Fax number</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text"><span class="fas fa-fax"></span>
+                            </div>
+                        </div>
+                        <input type="tel" class="form-control" placeholder="XXX-XX-XXXX" [formControlName]="business_fax" id="business_fax" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                    </div>
+                </div>
+
+            </div>
+            <div class="form-row justify-content-md-center checkboxrowwithpadding mt-4 bg-light p-3">
+                <div class="col-12">
+                    <label class="smalllabel">
+            Do you have a DBA?
+          </label>
+
+                </div>
+                <div class="col-2 ">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" [formControlName]="gotDba" id="gotDba1" value="Y">
+                        <label class="form-check-label" for="gotDba1">
+    Yes
+    </label>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" [formControlName]="gotDba" id="gotDba2" value="N" checked>
+                        <label class="form-check-label" for="gotDba2">
+    No
+    </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
